@@ -1,10 +1,12 @@
 # RAM-PRICE-AI
-# Affordable RAM Finder AI
 
 A simple AI-based website that searches RAM prices and recommends the best affordable option.
 
-## Features
-- Search RAM by name
-- Sort by lowest price
-- AI recommendation logic
-- Hosted on GitHub Pages
+## AI Logic
+The system analyzes RAM prices, availability, and store location to recommend the best affordable option for users.
+
+## Future Improvements
+- Real-time price API
+- User location detection
+- Machine learning price prediction
+- Mobile app version
