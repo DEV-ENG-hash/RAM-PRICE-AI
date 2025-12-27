@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Affordable RAM Finder AI</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<header class="hero">
+  <h1>RAM-PRICE-AI</h1>
+  <p>Find the best RAM deals using AI-powered price analysis</p>
+</header>
 
-<h1>🧠 Affordable RAM Finder AI</h1>
-<p>Search RAM with best prices</p>
+<section class="search-box">
+  <input type="text" id="searchInput" placeholder="Search RAM (8GB DDR4, 16GB DDR5...)">
+  <button onclick="searchRAM()">Search</button>
+</section>
 
-<input type="text" id="searchInput" placeholder="Search RAM (e.g. 8GB DDR4)">
-<button onclick="searchRAM()">Search</button>
+<section class="trust">
+  <p>Trusted Stores</p>
+  <div class="stores">
+    <span>Amazon</span>
+    <span>Newegg</span>
+    <span>Micro Center</span>
+    <span>Local Stores</span>
+  </div>
+</section>
 
-<div id="results"></div>
+<section id="results" class="results"></section>
 
-<script src="script.js"></script>
-</body>
-</html>
+<footer>
+  <p>© 2025 RAM-PRICE-AI · Student Project</p>
+</footer>
