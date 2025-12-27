@@ -4,34 +4,30 @@ const ramData = [
     price: 28,
     store: "Amazon",
     location: "Online",
-    stock: "In Stock"
+    stock: "In Stock",
+    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7"
   },
   {
     name: "Kingston 16GB DDR4",
     price: 55,
     store: "Newegg",
     location: "Online",
-    stock: "Limited Stock"
+    stock: "Limited Stock",
+    image: "https://images.unsplash.com/photo-1612197527762-2f8eebf0c7b7"
   },
   {
     name: "Crucial 8GB DDR4",
     price: 26,
     store: "Local PC Store",
     location: "New York",
-    stock: "In Stock"
-  },
-  {
-    name: "ADATA 16GB DDR4",
-    price: 50,
-    store: "Micro Center",
-    location: "California",
-    stock: "Out of Stock"
+    stock: "In Stock",
+    image: "https://images.unsplash.com/photo-1591488320449-011701bb6704"
   }
 ];
 function searchRAM() {
   const input = document.getElementById("searchInput").value.toLowerCase();
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = "";
+  const results = document.getElementById("results");
+  results.innerHTML = "";
 
   let filtered = ramData.filter(ram =>
     ram.name.toLowerCase().includes(input)
@@ -39,24 +35,19 @@ function searchRAM() {
 
   filtered.sort((a, b) => a.price - b.price);
 
-  if (filtered.length === 0) {
-    resultsDiv.innerHTML = "<p>No RAM found</p>";
-    return;
-  }
-
   filtered.forEach((ram, index) => {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.innerHTML = `
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${ram.image}" alt="RAM Image">
       <h3>${ram.name}</h3>
-      <p><strong>Price:</strong> $${ram.price}</p>
-      <p><strong>Store:</strong> ${ram.store}</p>
-      <p><strong>Location:</strong> ${ram.location}</p>
-      <p><strong>Status:</strong> ${ram.stock}</p>
-      ${index === 0 ? "<span class='badge'>🤖 AI Recommended</span>" : ""}
+      <p>💲 ${ram.price}</p>
+      <p>🏪 ${ram.store} · ${ram.location}</p>
+      <p>📦 ${ram.stock}</p>
+      ${index === 0 ? "<span class='badge'>AI Best Deal</span>" : ""}
       <button class="buy">View Deal</button>
     `;
-    resultsDiv.appendChild(div);
+    results.appendChild(card);
   });
 }
 
